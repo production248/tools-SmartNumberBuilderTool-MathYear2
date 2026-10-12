@@ -1,0 +1,1 @@
+﻿window.NUMBER_BUILDER_GRADE = "d2";
