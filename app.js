@@ -9,30 +9,30 @@
   const translations = {
     bm: {
       appTitle: "Jom Bina Nombor!", appSubtitle: "Susun, tukar dan fahami nilai nombor.",
-      soundOn: "Bunyi: Buka", soundOff: "Bunyi: Tutup",
-      modeReadwrite: "Baca & Tulis", modeBuild: "Bina Nombor", modeDecompose: "Cerai Nombor",
-      modeExtreme: "Terbesar / Terkecil", modeOrder: "Susun Nombor",
+      soundOn: "Bunyi", soundOff: "Senyap", fullscreen: "Skrin penuh", exitFullscreen: "Keluar penuh",
+      modeReadwrite: "Baca & Tulis", modeBuild: "Bina", modeDecompose: "Cerai",
+      modeExtreme: "Terbesar / Terkecil", modeOrder: "Susun",
       chooseLevel: "Pilih tahap", level: "Tahap",
       levelD1: "D1 (0–100)", levelD2: "D2 (0–1,000)", levelD3: "D3 (0–10,000)",
       levelD4: "D4 (0–100,000)", levelD5: "D5 (0–1,000,000)", levelD6: "D6 (0–10,000,000)",
       questionType: "Jenis soalan", practiceType: "Jenis latihan", randomOption: "Rawak",
       numberToWordsOption: "Nombor → perkataan", wordsToNumberOption: "Perkataan → nombor",
       largestOption: "Nombor terbesar", smallestOption: "Nombor terkecil",
-      newQuestion: "Cuba soalan lain", yourTask: "Mari cuba!", reset: "Mula semula",
+      newQuestion: "Soalan baharu", yourTask: "Mari cuba!", reset: "Semula",
       check: "Semak", next: "Soalan seterusnya",
       stepLook: "Lihat nilai tempat", stepMove: "Susun kad nombor", stepCheck: "Semak dan faham",
       readSteps: ["Lihat dengan teliti", "Pilih pasangan", "Semak jawapan"],
-      cardBank: "Kad nombor", bankHint: "Tekan atau seret kad", bankEmpty: "Semua kad sudah diletakkan.",
-      empty: "Kosong", howTo: "Tekan satu kad, kemudian tekan petak yang betul.",
-      readHowTo: "Lihat soalan, kemudian pilih kad yang sepadan.",
+      cardBank: "Kad nombor", bankHint: "Tekan atau seret", bankEmpty: "Semua kad sudah digunakan!",
+      empty: "Kosong", howTo: "Tekan kad, kemudian petak.",
+      readHowTo: "Lihat dan pilih pasangannya.",
       prompts: {
-        readwrite: "Padankan nombor dengan perkataan yang betul.", build: "Bina nombor daripada nilai yang diberi.",
-        decompose: "Cerai nombor mengikut nilai tempat.", extreme: "Gunakan semua kad sekali sahaja.",
-        order: "Susun semua nombor mengikut arahan."
+        readwrite: "Cari pasangan yang sama.", build: "Bina nombor ini.",
+        decompose: "Cerai nombor ini.", extreme: "Guna semua kad.",
+        order: "Susun nombor dari kiri ke kanan."
       },
       readPrompts: {
-        numberToWords: "Yang manakah cara menulis nombor ini?",
-        wordsToNumber: "Yang manakah nombor yang betul?"
+        numberToWords: "Pilih ejaan yang betul.",
+        wordsToNumber: "Pilih nombor yang betul."
       },
       challengeLabels: {
         readwrite: "Cari pasangan", build: "Nilai diberi", decompose: "Nombor diberi",
@@ -41,15 +41,19 @@
       readLabels: { numberToWords: "Baca nombor ini", wordsToNumber: "Baca perkataan ini" },
       largest: "Bina nombor paling besar", smallest: "Bina nombor paling kecil",
       ascending: "Kecil ke besar", descending: "Besar ke kecil",
-      ascendingShort: "kecil → besar", descendingShort: "besar → kecil",
+      orderGuides: {
+        ascending: { firstCue: "MULA", first: "Nombor paling kecil", lastCue: "AKHIR", last: "Nombor paling besar" },
+        descending: { firstCue: "MULA", first: "Nombor paling besar", lastCue: "AKHIR", last: "Nombor paling kecil" }
+      },
       ready: {
-        readwrite: "Pilih satu jawapan yang membawa nilai yang sama.",
-        build: "Pilih kad dan letakkan setiap digit pada nilai tempat yang betul.",
-        decompose: "Padankan setiap nilai dengan tempatnya.",
-        extreme: "Fikir digit manakah patut berada di sebelah kiri dahulu.",
-        order: "Bandingkan nilai tempat dari kiri sebelum menyusun."
+        readwrite: "Pilih satu jawapan.",
+        build: "Pilih kad, kemudian petak.",
+        decompose: "Padankan nilai dengan tempatnya.",
+        extreme: "Mulakan dari sebelah kiri.",
+        order: "Letak nombor yang perlu didahulukan di petak 1."
       },
       missing: "Isi semua petak dahulu.", chooseAnswer: "Pilih satu jawapan dahulu.", correct: "Betul!",
+      successCheer: "Hebat! Kamu berjaya menyelesaikannya.", successReview: "Lihat jawapan", successNext: "Soalan seterusnya",
       wrongRead: "Belum tepat. Semak nilai tempat dan kedudukan sifar.",
       wrongPlace: "Belum tepat. Semak nilai {place}.",
       wrongExtreme: "Belum tepat. Bandingkan digit dari sebelah kiri.",
@@ -61,42 +65,47 @@
     },
     zh: {
       appTitle: "一起来建构数字！", appSubtitle: "排列、转换，理解每个数字的数值。",
-      soundOn: "声音：开", soundOff: "声音：关",
-      modeReadwrite: "数字读写", modeBuild: "建构数字", modeDecompose: "分解数字",
-      modeExtreme: "最大数 / 最小数", modeOrder: "排列数字",
+      soundOn: "声音", soundOff: "静音", fullscreen: "全屏", exitFullscreen: "退出全屏",
+      modeReadwrite: "读写", modeBuild: "组数", modeDecompose: "拆数",
+      modeExtreme: "最大 / 最小", modeOrder: "排序",
       chooseLevel: "选择程度", level: "程度",
       levelD1: "一年级（0–100）", levelD2: "二年级（0–1,000）", levelD3: "三年级（0–10,000）",
       levelD4: "四年级（0–100,000）", levelD5: "五年级（0–1,000,000）", levelD6: "六年级（0–10,000,000）",
       questionType: "题目类型", practiceType: "练习类型", randomOption: "随机",
       numberToWordsOption: "数字 → 文字", wordsToNumberOption: "文字 → 数字",
       largestOption: "最大数", smallestOption: "最小数",
-      newQuestion: "换一道题", yourTask: "试试看！", reset: "重新开始", check: "检查", next: "下一题",
+      newQuestion: "换一题", yourTask: "试试看！", reset: "重来", check: "检查", next: "下一题",
       stepLook: "观察数位", stepMove: "排列数字卡", stepCheck: "检查并理解",
       readSteps: ["仔细观察", "选择配对", "检查答案"],
-      cardBank: "数字卡", bankHint: "点击或拖动卡片", bankEmpty: "所有卡片都已放入。",
-      empty: "空格", howTo: "先点击一张卡片，再点击正确的格子。",
-      readHowTo: "看清楚题目，再选择数值相同的卡片。",
+      cardBank: "数字卡", bankHint: "点击或拖动", bankEmpty: "数字卡都用上了！",
+      empty: "空格", howTo: "先点卡片，再点格子。",
+      readHowTo: "看一看，选出配对。",
       prompts: {
-        readwrite: "把数字和正确的文字配对。", build: "根据所给的数值建构数字。",
-        decompose: "按照数位分解这个数字。", extreme: "每张数字卡只能使用一次。",
-        order: "按照指示排列所有数字。"
+        readwrite: "找出相同的配对。", build: "组成这个数。",
+        decompose: "分解这个数。", extreme: "用上所有数字卡。",
+        order: "从左到右排列数字。"
       },
       readPrompts: {
-        numberToWords: "哪一个是这个数字的正确写法？",
-        wordsToNumber: "哪一个数字是正确的？"
+        numberToWords: "选出正确写法。",
+        wordsToNumber: "选出正确数字。"
       },
       challengeLabels: {
         readwrite: "找出配对", build: "所给数值", decompose: "所给数字", extreme: "你的任务", order: "排列方向"
       },
       readLabels: { numberToWords: "读一读这个数字", wordsToNumber: "读一读这些文字" },
       largest: "组成最大的数", smallest: "组成最小的数",
-      ascending: "从小到大", descending: "从大到小", ascendingShort: "小 → 大", descendingShort: "大 → 小",
+      ascending: "从小到大", descending: "从大到小",
+      orderGuides: {
+        ascending: { firstCue: "先放", first: "最小的数", lastCue: "最后", last: "最大的数" },
+        descending: { firstCue: "先放", first: "最大的数", lastCue: "最后", last: "最小的数" }
+      },
       ready: {
-        readwrite: "选择一个数值相同的答案。", build: "把每张卡片放在正确的数位。",
-        decompose: "把每个数值放在相应的数位。", extreme: "先想一想最左边应该放哪一个数字。",
-        order: "从最高数位开始比较，再排列数字。"
+        readwrite: "选择一个答案。", build: "先点卡片，再点格子。",
+        decompose: "把数值放到正确数位。", extreme: "从最左边开始想。",
+        order: "把应该最先排列的数放进第 1 格。"
       },
       missing: "请先填满所有格子。", chooseAnswer: "请先选择一个答案。", correct: "答对了！",
+      successCheer: "太棒了！你找到了正确答案。", successReview: "回看答案", successNext: "下一题",
       wrongRead: "还不正确，请检查数位和零的位置。", wrongPlace: "还不正确，请检查{place}。",
       wrongExtreme: "还不正确，请从左边开始比较数字。", wrongOrder: "还不正确，请先比较{place}。",
       places: {
@@ -106,29 +115,29 @@
     },
     en: {
       appTitle: "Let's Build Numbers!", appSubtitle: "Arrange, convert and understand place value.",
-      soundOn: "Sound: On", soundOff: "Sound: Off",
-      modeReadwrite: "Read & Write", modeBuild: "Build a Number", modeDecompose: "Break It Apart",
-      modeExtreme: "Largest / Smallest", modeOrder: "Order Numbers",
+      soundOn: "Sound", soundOff: "Muted", fullscreen: "Full screen", exitFullscreen: "Exit full screen",
+      modeReadwrite: "Read & Write", modeBuild: "Build", modeDecompose: "Split",
+      modeExtreme: "Largest / Smallest", modeOrder: "Order",
       chooseLevel: "Choose a level", level: "Level",
       levelD1: "Y1 (0–100)", levelD2: "Y2 (0–1,000)", levelD3: "Y3 (0–10,000)",
       levelD4: "Y4 (0–100,000)", levelD5: "Y5 (0–1,000,000)", levelD6: "Y6 (0–10,000,000)",
       questionType: "Question type", practiceType: "Practice type", randomOption: "Random",
       numberToWordsOption: "Number → words", wordsToNumberOption: "Words → number",
       largestOption: "Largest number", smallestOption: "Smallest number",
-      newQuestion: "Try another question", yourTask: "Let's try!", reset: "Start again", check: "Check", next: "Next question",
+      newQuestion: "New question", yourTask: "Let's try!", reset: "Reset", check: "Check", next: "Next question",
       stepLook: "Look at place value", stepMove: "Arrange the cards", stepCheck: "Check and understand",
       readSteps: ["Look carefully", "Choose the match", "Check the answer"],
-      cardBank: "Number cards", bankHint: "Tap or drag a card", bankEmpty: "All cards have been placed.",
-      empty: "Empty", howTo: "Tap a card, then tap the correct box.",
-      readHowTo: "Study the question, then choose the card with the same value.",
+      cardBank: "Number cards", bankHint: "Tap or drag", bankEmpty: "All cards are used!",
+      empty: "Empty", howTo: "Tap a card, then a box.",
+      readHowTo: "Look and pick its match.",
       prompts: {
-        readwrite: "Match the number to the correct words.", build: "Build the number from the values shown.",
-        decompose: "Break the number apart by place value.", extreme: "Use every card exactly once.",
-        order: "Arrange all numbers in the given order."
+        readwrite: "Find the matching pair.", build: "Build this number.",
+        decompose: "Split this number.", extreme: "Use every card.",
+        order: "Arrange the numbers from left to right."
       },
       readPrompts: {
-        numberToWords: "Which is the correct way to write this number?",
-        wordsToNumber: "Which is the correct number?"
+        numberToWords: "Pick the correct words.",
+        wordsToNumber: "Pick the correct number."
       },
       challengeLabels: {
         readwrite: "Find the match", build: "Values given", decompose: "Number given", extreme: "Your mission", order: "Order"
@@ -136,13 +145,17 @@
       readLabels: { numberToWords: "Read this number", wordsToNumber: "Read these words" },
       largest: "Build the largest number", smallest: "Build the smallest number",
       ascending: "Smallest to largest", descending: "Largest to smallest",
-      ascendingShort: "small → large", descendingShort: "large → small",
+      orderGuides: {
+        ascending: { firstCue: "FIRST", first: "Smallest number", lastCue: "LAST", last: "Largest number" },
+        descending: { firstCue: "FIRST", first: "Largest number", lastCue: "LAST", last: "Smallest number" }
+      },
       ready: {
-        readwrite: "Choose the answer with the same value.", build: "Place each digit in the correct place-value box.",
-        decompose: "Match every value to its place.", extreme: "Think about which digit should be furthest left first.",
-        order: "Compare place values from the left before ordering."
+        readwrite: "Choose one answer.", build: "Tap a card, then a box.",
+        decompose: "Match each value to its place.", extreme: "Start from the left.",
+        order: "Put the number that comes first in box 1."
       },
       missing: "Fill every box first.", chooseAnswer: "Choose an answer first.", correct: "Correct!",
+      successCheer: "Brilliant! You found the right answer.", successReview: "Review answer", successNext: "Next question",
       wrongRead: "Not yet. Check the place values and the positions of zeroes.",
       wrongPlace: "Not yet. Check the {place} place.", wrongExtreme: "Not yet. Compare the digits from the left.",
       wrongOrder: "Not yet. Compare the {place} place first.",
@@ -174,18 +187,21 @@
 
   let cardSerial = 0;
   let audioContext = null;
+  let operationGuide = null;
+  let activeGuideMode = null;
+  let configuredGuideMode = null;
 
   const modeTabs = document.getElementById("modeTabs");
   const levelSelect = document.getElementById("levelSelect");
   const levelField = levelSelect.closest(".field");
-  const levelEyebrow = document.getElementById("levelEyebrow");
   const readDirectionField = document.getElementById("readDirectionField");
   const readDirectionSelect = document.getElementById("readDirectionSelect");
   const extremeObjectiveField = document.getElementById("extremeObjectiveField");
   const extremeObjectiveSelect = document.getElementById("extremeObjectiveSelect");
   const soundToggle = document.getElementById("soundToggle");
-  const modeTitle = document.getElementById("modeTitle");
-  const howToText = document.getElementById("howToText");
+  const soundIcon = document.getElementById("soundIcon");
+  const soundLabel = document.getElementById("soundLabel");
+  const fullscreenToggle = document.getElementById("fullscreenToggle");
   const promptText = document.getElementById("promptText");
   const levelBadge = document.getElementById("levelBadge");
   const challengeDisplay = document.getElementById("challengeDisplay");
@@ -199,7 +215,208 @@
   const checkBtn = document.getElementById("checkBtn");
   const newQuestionBtn = document.getElementById("newQuestionBtn");
   const celebrationLayer = document.getElementById("celebrationLayer");
-  const stepTexts = [document.getElementById("stepLookText"), document.getElementById("stepMoveText"), document.getElementById("stepCheckText")];
+  const successDialog = document.getElementById("successDialog");
+  const successDialogTitle = document.getElementById("successDialogTitle");
+  const successDialogCheer = document.getElementById("successDialogCheer");
+  const successDialogAnswer = document.getElementById("successDialogAnswer");
+  const successReviewBtn = document.getElementById("successReviewBtn");
+  const successNextBtn = document.getElementById("successNextBtn");
+  const successCelebrationLayer = document.getElementById("successCelebrationLayer");
+  const stepTexts = [document.getElementById("stepLookText"), document.getElementById("stepMoveText"), document.getElementById("stepCheckText")].filter(Boolean);
+
+  function guideNarration(fileName) {
+    return {
+      bm: new URL("assets/operation-guide/voices/bm/" + fileName, document.baseURI).href,
+      zh: new URL("assets/operation-guide/voices/zh/" + fileName, document.baseURI).href,
+      en: new URL("assets/operation-guide/voices/en/" + fileName, document.baseURI).href
+    };
+  }
+
+  const contextualGuideCopy = {
+    "goal-readwrite": {
+      bm: { title: "Belajar membaca nombor", body: "Padankan nombor dengan perkataan sambil memahami nilai setiap digit." },
+      zh: { title: "学习数字读写", body: "把数字和文字配对，同时理解每个数位的值。" },
+      en: { title: "Learn to read numbers", body: "Match numbers with words while understanding each digit's place value." }
+    },
+    "goal-build": {
+      bm: { title: "Belajar membina nombor", body: "Gabungkan nilai ratus, puluh dan sa untuk membina nombor." },
+      zh: { title: "学习组成数字", body: "把百位、十位和个位的值组成一个数字。" },
+      en: { title: "Learn to build numbers", body: "Combine hundreds, tens and ones to build a number." }
+    },
+    "goal-decompose": {
+      bm: { title: "Belajar mencerai nombor", body: "Pecahkan nombor kepada nilai ratus, puluh dan sa." },
+      zh: { title: "学习分解数字", body: "按照数位把数字分解成展开值。" },
+      en: { title: "Learn to split numbers", body: "Break the number apart into hundreds, tens and ones." }
+    },
+    "goal-extreme": {
+      bm: { title: "Terbesar atau terkecil", body: "Susun digit untuk membina nombor terbesar atau terkecil." },
+      zh: { title: "组成最大或最小数", body: "排列数字，组成最大的数或最小的数。" },
+      en: { title: "Largest or smallest", body: "Arrange the digits to build the largest or smallest number." }
+    },
+    "goal-order": {
+      bm: { title: "Belajar menyusun nombor", body: "Bandingkan nilai tempat untuk menyusun nombor mengikut arah yang diberi." },
+      zh: { title: "学习数字排序", body: "比较数位，并按照指定方向排列数字。" },
+      en: { title: "Learn to order numbers", body: "Compare place values to put the numbers in the given order." }
+    },
+    "readwrite-direction": {
+      bm: { title: "Pilih arah bacaan", body: "Pilih nombor kepada perkataan, perkataan kepada nombor, atau latihan rawak." },
+      zh: { title: "选择读写方向", body: "选择数字转文字、文字转数字，或随机练习。" },
+      en: { title: "Choose reading direction", body: "Choose number to words, words to number, or random practice." }
+    },
+    "readwrite-prompt": {
+      bm: { title: "Baca dengan teliti", body: "Kenal pasti sama ada soalan memberi nombor atau perkataan." },
+      zh: { title: "仔细阅读", body: "先看清题目给出的是数字还是文字。" },
+      en: { title: "Read carefully", body: "First, see whether the question shows a number or words." }
+    },
+    "readwrite-match": {
+      bm: { title: "Cari nilai yang sama", body: "Pilih jawapan yang membawa nilai yang sama dengan soalan." },
+      zh: { title: "找出相同的值", body: "选择和题目数值相同的答案。" },
+      en: { title: "Find the same value", body: "Choose the answer with the same value as the question." }
+    },
+    "readwrite-check": {
+      bm: { title: "Semak pilihan", body: "Selepas memilih satu jawapan, tekan Semak." },
+      zh: { title: "检查选择", body: "选择一个答案后，点击检查。" },
+      en: { title: "Check your choice", body: "After choosing one answer, tap Check." }
+    },
+    "extreme-objective": {
+      bm: { title: "Pilih matlamat", body: "Pilih nombor terbesar, nombor terkecil, atau latihan rawak." },
+      zh: { title: "选择目标", body: "选择最大数、最小数，或随机练习。" },
+      en: { title: "Choose a goal", body: "Choose largest number, smallest number, or random practice." }
+    },
+    "extreme-place": {
+      bm: { title: "Mulakan dari kiri", body: "Untuk nombor terbesar atau terkecil, tentukan digit paling kiri dahulu." },
+      zh: { title: "从左边开始", body: "无论最大或最小，都先决定最左边的数字。" },
+      en: { title: "Start from the left", body: "For the largest or smallest number, decide the leftmost digit first." }
+    },
+    "order-direction": {
+      bm: { title: "Lihat arah susunan", body: "Pastikan nombor perlu disusun dari kecil ke besar atau sebaliknya." },
+      zh: { title: "看清排列方向", body: "确认要从小到大，还是从大到小排列。" },
+      en: { title: "Check the order", body: "See whether the numbers go from smallest to largest or the other way." }
+    },
+    "order-compare": {
+      bm: { title: "Banding dari kiri", body: "Bandingkan nilai tempat terbesar dahulu; jika sama, bergerak ke kanan." },
+      zh: { title: "从左边比较", body: "先比较最高数位；相同再向右比较。" },
+      en: { title: "Compare from the left", body: "Compare the greatest place value first; if equal, move right." }
+    },
+    "order-place": {
+      bm: { title: "Susun satu demi satu", body: "Ikut petunjuk pertama dan terakhir untuk meletakkan semua nombor." },
+      zh: { title: "逐个排列", body: "根据最先和最后的提示放入所有数字。" },
+      en: { title: "Order one by one", body: "Use the first and last clues to place every number." }
+    }
+  };
+
+  const commonGuideCopy = {
+    "read-task": {
+      bm: { title: "Baca tugasan", body: "Baca arahan, kemudian lihat nombor yang diberi." },
+      zh: { title: "看清任务", body: "读一读上面的任务，再看看给出的数字。" },
+      en: { title: "Read the task", body: "Read the task, then look at the number shown." }
+    },
+    "choose-card": {
+      bm: { title: "Pilih kad", body: "Tekan kad nombor yang mahu kamu gunakan." },
+      zh: { title: "选择数字卡", body: "点击一张你要使用的数字卡。" },
+      en: { title: "Choose a card", body: "Tap the number card you want to use." }
+    },
+    "place-card": {
+      bm: { title: "Letak kad", body: "Selepas itu, tekan petak yang betul untuk meletakkan kad tersebut." },
+      zh: { title: "放入格子", body: "再点击正确的格子，把数字卡放进去。" },
+      en: { title: "Place the card", body: "Then tap the correct box to place the card." }
+    },
+    "check-answer": {
+      bm: { title: "Semak jawapan", body: "Apabila semua petak sudah diisi, tekan butang Semak." },
+      zh: { title: "检查答案", body: "填好所有格子后，点击检查。" },
+      en: { title: "Check your answer", body: "When every box is filled, tap Check." }
+    }
+  };
+
+  function contextualGuideStep(mode, key, target) {
+    return {
+      id: mode + "-" + key,
+      target,
+      content: contextualGuideCopy[key],
+      narration: guideNarration("contextual/" + key + ".mp3")
+    };
+  }
+
+  function commonGuideStep(mode, key, target, fileName) {
+    return {
+      id: mode + "-" + key,
+      target,
+      content: commonGuideCopy[key],
+      narration: guideNarration(fileName)
+    };
+  }
+
+  function getModeGuideSteps(mode) {
+    const modeTarget = '.mode-tab[data-mode="' + mode + '"]';
+    const flows = {
+      readwrite: [
+        contextualGuideStep(mode, "goal-readwrite", modeTarget),
+        contextualGuideStep(mode, "readwrite-direction", "#readDirectionField"),
+        contextualGuideStep(mode, "readwrite-prompt", "#challengeDisplay"),
+        contextualGuideStep(mode, "readwrite-match", "#conceptStage"),
+        contextualGuideStep(mode, "readwrite-check", "#checkBtn")
+      ],
+      build: [
+        contextualGuideStep(mode, "goal-build", modeTarget),
+        commonGuideStep(mode, "read-task", "#challengeDisplay", "02-read-task.mp3"),
+        commonGuideStep(mode, "choose-card", "#cardBank", "03-choose-card.mp3"),
+        commonGuideStep(mode, "place-card", "#conceptStage", "04-place-card.mp3"),
+        commonGuideStep(mode, "check-answer", "#checkBtn", "05-check.mp3")
+      ],
+      decompose: [
+        contextualGuideStep(mode, "goal-decompose", modeTarget),
+        commonGuideStep(mode, "read-task", "#challengeDisplay", "02-read-task.mp3"),
+        commonGuideStep(mode, "choose-card", "#cardBank", "03-choose-card.mp3"),
+        commonGuideStep(mode, "place-card", "#conceptStage", "04-place-card.mp3"),
+        commonGuideStep(mode, "check-answer", "#checkBtn", "05-check.mp3")
+      ],
+      extreme: [
+        contextualGuideStep(mode, "goal-extreme", modeTarget),
+        contextualGuideStep(mode, "extreme-objective", "#extremeObjectiveField"),
+        commonGuideStep(mode, "choose-card", "#cardBank", "03-choose-card.mp3"),
+        contextualGuideStep(mode, "extreme-place", "#conceptStage"),
+        commonGuideStep(mode, "check-answer", "#checkBtn", "05-check.mp3")
+      ],
+      order: [
+        contextualGuideStep(mode, "goal-order", modeTarget),
+        contextualGuideStep(mode, "order-direction", "#challengeDisplay"),
+        contextualGuideStep(mode, "order-compare", "#cardBank"),
+        contextualGuideStep(mode, "order-place", "#conceptStage"),
+        commonGuideStep(mode, "check-answer", "#checkBtn", "05-check.mp3")
+      ]
+    };
+    return flows[mode] || flows.build;
+  }
+
+  function refreshOperationGuideSteps() {
+    if (!operationGuide || activeGuideMode || configuredGuideMode === state.mode) return;
+    operationGuide.configure({ steps: getModeGuideSteps(state.mode) });
+    configuredGuideMode = state.mode;
+  }
+
+  async function initOperationGuide() {
+    try {
+      const sharedGuide = await window.EdCloudOperationGuideReady;
+      if (!sharedGuide?.mount) return;
+      operationGuide = sharedGuide.mount({
+        guideId: "math-y2-smart-number-builder",
+        language: state.lang,
+        soundEnabled: state.sound,
+        dockOffset: { right: 16, bottom: 104, mobileRight: 10, mobileBottom: 104 },
+        steps: getModeGuideSteps(state.mode)
+      });
+      configuredGuideMode = state.mode;
+      operationGuide.addEventListener("guide-started", () => {
+        activeGuideMode = state.mode;
+      });
+      operationGuide.addEventListener("guide-closed", () => {
+        activeGuideMode = null;
+        refreshOperationGuideSteps();
+      });
+    } catch (error) {
+      console.warn("Shared operation guide failed to initialize.", error);
+    }
+  }
 
   function t() { return translations[state.lang]; }
   function levelName() {
@@ -240,7 +457,10 @@
   }
 
   function generateQuestion() {
+    document.querySelector("edcloud-correct-celebration")?.close?.("new-question");
+    closeSuccessDialog();
     celebrationLayer.replaceChildren();
+    successCelebrationLayer.replaceChildren();
     let question;
     if (state.mode === "readwrite") {
       const target = generateLevelNumber(.12);
@@ -398,30 +618,47 @@
     return result;
   }
 
+  function updateSoundButton() {
+    const label = state.sound ? t().soundOn : t().soundOff;
+    soundIcon.src = state.sound ? "assets/ui-icons/sound-on.png" : "assets/ui-icons/sound-off.png";
+    soundLabel.textContent = label;
+    soundToggle.setAttribute("aria-pressed", String(state.sound));
+    soundToggle.setAttribute("aria-label", label);
+  }
+
   function applyTranslations() {
     document.documentElement.lang = state.lang === "zh" ? "zh-Hans" : state.lang;
     document.querySelectorAll("[data-i18n]").forEach(element => {
       const key = element.dataset.i18n;
       if (Object.prototype.hasOwnProperty.call(t(), key) && typeof t()[key] === "string") element.textContent = t()[key];
     });
-    soundToggle.querySelector("span:last-child").textContent = state.sound ? t().soundOn : t().soundOff;
+    updateSoundButton();
+    updateFullscreenButton();
     levelSelect.value = state.level;
     levelField.hidden = Boolean(configuredLevel);
     if (configuredLevel) {
-      levelEyebrow.textContent = levelName();
       document.title = `${t().appTitle} · ${levelName()}`;
     }
     readDirectionField.hidden = state.mode !== "readwrite";
     extremeObjectiveField.hidden = state.mode !== "extreme";
     readDirectionSelect.value = state.readDirection;
     extremeObjectiveSelect.value = state.extremeObjective;
-    modeTitle.textContent = t()[`mode${state.mode.charAt(0).toUpperCase()}${state.mode.slice(1)}`];
-    howToText.textContent = state.mode === "readwrite" ? t().readHowTo : t().howTo;
     promptText.textContent = state.mode === "readwrite" && state.question ? t().readPrompts[state.question.direction] : t().prompts[state.mode];
     cardBankTitle.textContent = t().cardBank;
     bankHint.textContent = t().bankHint;
     const steps = state.mode === "readwrite" ? t().readSteps : [t().stepLook, t().stepMove, t().stepCheck];
     stepTexts.forEach((element, index) => { element.textContent = steps[index]; });
+  }
+
+  function updateFullscreenButton() {
+    if (!fullscreenToggle) return;
+    const isFullscreen = Boolean(document.fullscreenElement);
+    const label = isFullscreen ? t().exitFullscreen : t().fullscreen;
+    fullscreenToggle.querySelector("span:first-child").textContent = isFullscreen ? "⊡" : "⛶";
+    fullscreenToggle.querySelector("span:last-child").textContent = label;
+    fullscreenToggle.setAttribute("aria-label", label);
+    fullscreenToggle.setAttribute("aria-pressed", String(isFullscreen));
+    fullscreenToggle.title = label;
   }
 
   function renderQuestion() {
@@ -434,6 +671,7 @@
     renderCardBank();
     setFeedback(t().ready[state.mode]);
     updateCheckButton();
+    refreshOperationGuideSteps();
   }
 
   function renderChallenge() {
@@ -467,6 +705,7 @@
 
   function renderConceptStage() {
     conceptStage.replaceChildren();
+    conceptStage.classList.toggle("is-solved", state.solved);
     if (state.mode === "readwrite") { renderReadingChoices(); return; }
     const places = getPlaces();
     if (state.mode === "order") {
@@ -475,8 +714,29 @@
       board.style.setProperty("--column-count", state.placements.length);
       const direction = document.createElement("div");
       direction.className = "order-direction";
-      const directionLabel = state.question.objective === "ascending" ? t().ascendingShort : t().descendingShort;
-      direction.innerHTML = `<span class="direction-arrow" aria-hidden="true">${state.question.objective === "ascending" ? "↗" : "↘"}</span><span>${directionLabel}</span>`;
+      direction.setAttribute("role", "note");
+      const directionGuide = t().orderGuides[state.question.objective];
+      direction.setAttribute("aria-label", `${directionGuide.firstCue}: ${directionGuide.first}. ${directionGuide.lastCue}: ${directionGuide.last}.`);
+      const createDirectionStep = (cue, text) => {
+        const step = document.createElement("span");
+        step.className = "direction-step";
+        const marker = document.createElement("span");
+        marker.className = "direction-cue";
+        marker.textContent = cue;
+        const label = document.createElement("strong");
+        label.textContent = text;
+        step.append(marker, label);
+        return step;
+      };
+      const directionArrow = document.createElement("span");
+      directionArrow.className = "direction-arrow";
+      directionArrow.setAttribute("aria-hidden", "true");
+      directionArrow.textContent = "→";
+      direction.append(
+        createDirectionStep(directionGuide.firstCue, directionGuide.first),
+        directionArrow,
+        createDirectionStep(directionGuide.lastCue, directionGuide.last)
+      );
       board.append(direction);
       state.placements.forEach((cardId, index) => {
         const position = document.createElement("div");
@@ -646,8 +906,9 @@
     const correct = actual.every((value, index) => value === state.question.expected[index]);
     if (correct) {
       state.solved = true; state.selectedCardId = null;
-      setFeedback(makeSuccessMessage(actual), "success", true); playSuccess(); celebrate();
-      renderConceptStage(); renderCardBank(); updateCheckButton(); return;
+      setFeedback(makeSuccessMessage(actual), "success", true);
+      renderConceptStage(); renderCardBank(); updateCheckButton();
+      showCorrectCelebration(actual); return;
     }
     markWrongSlots(actual); setFeedback(makeHint(actual), "error"); playError();
   }
@@ -656,7 +917,9 @@
     if (state.selectedReadAnswer === null) { setFeedback(t().chooseAnswer, "error"); playError(); return; }
     if (state.selectedReadAnswer === state.question.target) {
       state.solved = true; state.wrongReadAnswer = null;
-      setFeedback(makeSuccessMessage([]), "success", true); playSuccess(); celebrate(); renderConceptStage(); updateCheckButton();
+      setFeedback(makeSuccessMessage([]), "success", true);
+      renderConceptStage(); updateCheckButton();
+      showCorrectCelebration([]);
     } else {
       state.wrongReadAnswer = state.selectedReadAnswer;
       setFeedback(t().wrongRead, "error"); playError(); renderConceptStage();
@@ -664,16 +927,78 @@
   }
 
   function makeSuccessMessage(actual) {
-    const prefix = `<strong>${t().correct}</strong> `;
+    return `<strong>${t().correct}</strong> ${makeSuccessDetails(actual)}`;
+  }
+
+  function makeSuccessDetails(actual) {
     if (state.mode === "readwrite") {
-      return `${prefix}<span class="place-explanation"><span class="explain-part">${formatNumber(state.question.target)}</span><span>=</span><span class="explain-part">${numberToWords(state.question.target)}</span></span>`;
+      return `<span class="place-explanation"><span class="explain-part">${formatNumber(state.question.target)}</span><span>=</span><span class="explain-part">${numberToWords(state.question.target)}</span></span>`;
     }
     if (state.mode === "build" || state.mode === "decompose") {
       const equation = `${formatNumber(state.question.target)} = ${state.question.expandedValues.map(formatNumber).join(" + ")}`;
-      return `${prefix}<span class="place-explanation"><span class="explain-part">${equation}</span></span>`;
+      return `<span class="place-explanation"><span class="explain-part">${equation}</span></span>`;
     }
-    if (state.mode === "extreme") return `${prefix}<span class="explain-part">${actual.join("")}</span>`;
-    return `${prefix}<span class="place-explanation">${actual.map(value => `<span class="explain-part">${formatNumber(value)}</span>`).join(" → ")}</span>`;
+    if (state.mode === "extreme") return `<span class="explain-part">${actual.join("")}</span>`;
+    return `<span class="place-explanation">${actual.map(value => `<span class="explain-part">${formatNumber(value)}</span>`).join(" → ")}</span>`;
+  }
+
+  function makeSuccessAnswerText(actual) {
+    if (state.mode === "readwrite") {
+      return `${formatNumber(state.question.target)} = ${numberToWords(state.question.target)}`;
+    }
+    if (state.mode === "build" || state.mode === "decompose") {
+      return `${formatNumber(state.question.target)} = ${state.question.expandedValues.map(formatNumber).join(" + ")}`;
+    }
+    if (state.mode === "extreme") return actual.join("");
+    return actual.map(formatNumber).join(" → ");
+  }
+
+  function showCorrectCelebration(actual) {
+    const celebration = window.EdCloudCorrectCelebration;
+    if (typeof celebration?.show === "function") {
+      try {
+        celebration.show({
+          animation: "random",
+          language: state.lang,
+          title: t().correct,
+          message: t().successCheer,
+          answerText: makeSuccessAnswerText(actual),
+          soundEnabled: state.sound,
+          reviewText: t().successReview,
+          nextText: t().successNext,
+          onReview: () => {
+            playClick();
+            checkBtn.focus();
+          },
+          onNext: () => {
+            playClick();
+            generateQuestion();
+          }
+        });
+        return;
+      } catch (error) {
+        console.warn("Shared correct celebration failed; using the built-in fallback.", error);
+      }
+    }
+
+    playSuccess();
+    showSuccessDialog(actual);
+    celebrate();
+  }
+
+  function showSuccessDialog(actual) {
+    successDialogTitle.textContent = t().correct;
+    successDialogCheer.textContent = t().successCheer;
+    successDialogAnswer.innerHTML = makeSuccessDetails(actual);
+    successReviewBtn.textContent = t().successReview;
+    successNextBtn.textContent = t().successNext;
+
+    if (!successDialog.open) successDialog.showModal();
+    window.requestAnimationFrame(() => successNextBtn.focus());
+  }
+
+  function closeSuccessDialog() {
+    if (successDialog.open) successDialog.close();
   }
 
   function makeHint(actual) {
@@ -713,19 +1038,23 @@
   }
 
   function celebrate() {
-    const colors = ["#ffca4f", "#35a58c", "#3579b9", "#ef9837", "#d64f4f"];
-    celebrationLayer.replaceChildren();
-    for (let i = 0; i < 26; i += 1) {
-      const piece = document.createElement("span");
-      piece.className = "confetti-piece";
-      piece.style.setProperty("--confetti-color", colors[i % colors.length]);
-      piece.style.setProperty("--confetti-x", `${randomInt(-350, 350)}px`);
-      piece.style.setProperty("--confetti-y", `${randomInt(-230, 230)}px`);
-      piece.style.setProperty("--confetti-r", `${randomInt(-540, 540)}deg`);
-      piece.style.animationDelay = `${i * 9}ms`;
-      celebrationLayer.append(piece);
-    }
-    window.setTimeout(() => celebrationLayer.replaceChildren(), 1000);
+    const colors = ["#ffc129", "#f5851f", "#ffffff", "#ffe094", "#fff0ca"];
+    const targets = [celebrationLayer, successCelebrationLayer];
+    targets.forEach(target => {
+      target.replaceChildren();
+      const dialogBurst = target === successCelebrationLayer;
+      for (let i = 0; i < 30; i += 1) {
+        const piece = document.createElement("span");
+        piece.className = "confetti-piece";
+        piece.style.setProperty("--confetti-color", colors[i % colors.length]);
+        piece.style.setProperty("--confetti-x", `${randomInt(dialogBurst ? -260 : -350, dialogBurst ? 260 : 350)}px`);
+        piece.style.setProperty("--confetti-y", `${randomInt(dialogBurst ? -190 : -230, dialogBurst ? 220 : 230)}px`);
+        piece.style.setProperty("--confetti-r", `${randomInt(-540, 540)}deg`);
+        piece.style.animationDelay = `${i * 9}ms`;
+        target.append(piece);
+      }
+    });
+    window.setTimeout(() => targets.forEach(target => target.replaceChildren()), 1100);
   }
   function ensureAudioContext() {
     if (!state.sound) return null;
@@ -753,7 +1082,7 @@
 
   modeTabs.addEventListener("click", event => {
     const button = event.target.closest("[data-mode]");
-    if (!button || button.dataset.mode === state.mode) return;
+    if (!button || button.dataset.mode === state.mode || activeGuideMode) return;
     state.mode = button.dataset.mode;
     document.querySelectorAll(".mode-tab").forEach(tab => {
       const active = tab === button;
@@ -774,23 +1103,46 @@
         const active = languageButton === button;
         languageButton.classList.toggle("active", active); languageButton.setAttribute("aria-pressed", String(active));
       });
+      operationGuide?.setLanguage(state.lang);
       playClick(); renderQuestion();
     });
   });
   soundToggle.addEventListener("click", () => {
     state.sound = !state.sound;
-    soundToggle.setAttribute("aria-pressed", String(state.sound));
-    soundToggle.querySelector("span:first-child").textContent = state.sound ? "🔊" : "🔇";
-    soundToggle.querySelector("span:last-child").textContent = state.sound ? t().soundOn : t().soundOff;
+    updateSoundButton();
+    operationGuide?.setSoundEnabled(state.sound);
     if (state.sound) playClick();
   });
+  if (fullscreenToggle) {
+    fullscreenToggle.hidden = !document.fullscreenEnabled;
+    fullscreenToggle.addEventListener("click", async () => {
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else await document.documentElement.requestFullscreen();
+        playClick();
+      } catch (error) {
+        fullscreenToggle.title = error instanceof Error ? error.message : t().fullscreen;
+      }
+    });
+    document.addEventListener("fullscreenchange", updateFullscreenButton);
+  }
   cardBank.addEventListener("dragover", event => { event.preventDefault(); cardBank.classList.add("is-drop-target"); });
   cardBank.addEventListener("dragleave", () => cardBank.classList.remove("is-drop-target"));
   cardBank.addEventListener("drop", event => { event.preventDefault(); cardBank.classList.remove("is-drop-target"); returnDraggedCardToBank(); });
   resetBtn.addEventListener("click", resetPlacements);
   checkBtn.addEventListener("click", checkAnswer);
   newQuestionBtn.addEventListener("click", () => { playClick(); generateQuestion(); });
+  successReviewBtn.addEventListener("click", () => {
+    closeSuccessDialog(); playClick(); checkBtn.focus();
+  });
+  successNextBtn.addEventListener("click", () => {
+    closeSuccessDialog(); playClick(); generateQuestion();
+  });
+  successDialog.addEventListener("cancel", event => {
+    event.preventDefault(); closeSuccessDialog(); checkBtn.focus();
+  });
 
   if (configuredLevel) document.body.classList.add("fixed-grade");
   generateQuestion();
+  initOperationGuide();
 })();
