@@ -1,0 +1,24 @@
+   
+   "homeworks": [
+   
+   {
+                "homeworkId": "3de74a76-9665-4057-906e-80aed8670c54",
+                "homeworkType": "ELATIHAN",
+                "sourceId": "1485fbbc-b2c1-4866-9137-bcb9ddf2fb54",
+                "action": "OPEN_ELATIHAN_SESSION",
+                "title": "Learn From Mistake: BM-SJKC-G2-MS-ALL-TYPES-01",
+                "descriptionText": null,
+                "classSectionSubjectId": "2e8b475c-2703-4620-849f-9607e8f9d0f6",
+                "className": "2A BIRU",
+                "subjectId": "a96d54a7-a783-4f5b-8378-fea2b6f2cde8",
+                "subjectCode": "BM",
+                "subjectName": "Bahasa Melayu",
+                "assignedByName": "Teacher tan",
+                "dueDate": null,
+                "status": "IN_PROGRESS",
+                "isCompleted": false,
+                "isLate": false,
+                "isOverdue": false,
+                "createdAt": "2026-09-23T11:50:50.556719"
+            }
+]

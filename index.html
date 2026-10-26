@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffca4f">
+  <meta name="theme-color" content="#ffc129">
   <meta name="description" content="An interactive place-value and number-sense tool for Malaysian Math Year 2 pupils.">
   <title>Smart Number Builder - Math Year 2</title>
+  <link rel="icon" type="image/png" href="edcloud-app-icon.png">
+  <link rel="preload" href="assets/ui-icons/sound-off.png" as="image" type="image/png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +22,7 @@
   <div class="app-shell" hidden>
     <header class="topbar">
       <div class="brand">
-        <span class="brand-icon" aria-hidden="true">🔢</span>
+        <img class="brand-icon" src="edcloud-app-icon.png" alt="" aria-hidden="true">
         <div>
           <h1 data-i18n="appTitle">Jom Bina Nombor!</h1>
           <p data-i18n="appSubtitle">Susun, tukar dan fahami nilai nombor.</p>
@@ -28,9 +30,13 @@
       </div>
 
       <div class="header-actions">
+        <button class="fullscreen-toggle" id="fullscreenToggle" type="button">
+          <span aria-hidden="true">⛶</span>
+          <span data-i18n="fullscreen">Skrin penuh</span>
+        </button>
         <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
-          <span aria-hidden="true">🔊</span>
-          <span data-i18n="soundOn">Bunyi: Buka</span>
+          <img id="soundIcon" class="sound-icon" src="assets/ui-icons/sound-on.png" width="28" height="28" alt="" aria-hidden="true" draggable="false">
+          <span id="soundLabel" data-i18n="soundOn">Bunyi</span>
         </button>
         <div class="language-switch" role="group" aria-label="Language">
           <button class="language-btn active" type="button" data-lang="bm" aria-pressed="true">BM</button>
@@ -43,80 +49,71 @@
     <main>
       <nav class="mode-tabs" id="modeTabs" aria-label="Learning modes">
         <button class="mode-tab" type="button" data-mode="readwrite" aria-pressed="false">
-          <span aria-hidden="true">📖</span><span data-i18n="modeReadwrite">Baca &amp; Tulis</span>
+          <img class="mode-icon" src="assets/mode-icons/read-write.png" width="40" height="40" alt="" aria-hidden="true" draggable="false">
+          <span class="mode-label" data-i18n="modeReadwrite">Baca &amp; Tulis</span>
         </button>
         <button class="mode-tab active" type="button" data-mode="build" aria-pressed="true">
-          <span aria-hidden="true">🏠</span><span data-i18n="modeBuild">Bina Nombor</span>
+          <img class="mode-icon" src="assets/mode-icons/build.png" width="40" height="40" alt="" aria-hidden="true" draggable="false">
+          <span class="mode-label" data-i18n="modeBuild">Bina</span>
         </button>
         <button class="mode-tab" type="button" data-mode="decompose" aria-pressed="false">
-          <span aria-hidden="true">🧩</span><span data-i18n="modeDecompose">Cerai Nombor</span>
+          <img class="mode-icon" src="assets/mode-icons/split.png" width="40" height="40" alt="" aria-hidden="true" draggable="false">
+          <span class="mode-label" data-i18n="modeDecompose">Cerai</span>
         </button>
         <button class="mode-tab" type="button" data-mode="extreme" aria-pressed="false">
-          <span aria-hidden="true">🏆</span><span data-i18n="modeExtreme">Terbesar / Terkecil</span>
+          <img class="mode-icon" src="assets/mode-icons/compare.png" width="40" height="40" alt="" aria-hidden="true" draggable="false">
+          <span class="mode-label" data-i18n="modeExtreme">Terbesar / Terkecil</span>
         </button>
         <button class="mode-tab" type="button" data-mode="order" aria-pressed="false">
-          <span aria-hidden="true">🪜</span><span data-i18n="modeOrder">Susun Nombor</span>
+          <img class="mode-icon" src="assets/mode-icons/order.png" width="40" height="40" alt="" aria-hidden="true" draggable="false">
+          <span class="mode-label" data-i18n="modeOrder">Susun</span>
         </button>
       </nav>
 
       <section class="workspace">
-        <aside class="control-panel" aria-labelledby="modeTitle">
-          <div class="panel-heading">
-            <span class="eyebrow" id="levelEyebrow" data-i18n="chooseLevel">Pilih tahap</span>
-            <h2 id="modeTitle">Bina Nombor</h2>
-          </div>
-
-          <div id="controlsHost">
-            <label class="field" for="levelSelect">
-              <span data-i18n="level">Tahap</span>
-              <select id="levelSelect">
-                <option value="d1" data-i18n="levelD1">D1 (0–100)</option>
-                <option value="d2" data-i18n="levelD2">D2 (0–1,000)</option>
-                <option value="d3" data-i18n="levelD3">D3 (0–10,000)</option>
-                <option value="d4" data-i18n="levelD4">D4 (0–100,000)</option>
-                <option value="d5" data-i18n="levelD5">D5 (0–1,000,000)</option>
-                <option value="d6" data-i18n="levelD6">D6 (0–10,000,000)</option>
-              </select>
-            </label>
-
-            <label class="field" id="readDirectionField" for="readDirectionSelect" hidden>
-              <span data-i18n="practiceType">Jenis latihan</span>
-              <select id="readDirectionSelect">
-                <option value="random" data-i18n="randomOption">Rawak</option>
-                <option value="numberToWords" data-i18n="numberToWordsOption">Nombor → perkataan</option>
-                <option value="wordsToNumber" data-i18n="wordsToNumberOption">Perkataan → nombor</option>
-              </select>
-            </label>
-
-            <label class="field" id="extremeObjectiveField" for="extremeObjectiveSelect" hidden>
-              <span data-i18n="questionType">Jenis soalan</span>
-              <select id="extremeObjectiveSelect">
-                <option value="random" data-i18n="randomOption">Rawak</option>
-                <option value="largest" data-i18n="largestOption">Nombor terbesar</option>
-                <option value="smallest" data-i18n="smallestOption">Nombor terkecil</option>
-              </select>
-            </label>
-
-            <div class="how-to-card">
-              <span class="how-to-icon" aria-hidden="true">☝️</span>
-              <p id="howToText">Tekan satu kad, kemudian tekan petak yang betul.</p>
-            </div>
-          </div>
-
-          <button class="secondary-btn full-width" id="newQuestionBtn" type="button">
-            <span aria-hidden="true">↻</span><span data-i18n="newQuestion">Cuba soalan lain</span>
-          </button>
-        </aside>
-
         <section class="visual-panel" aria-labelledby="promptText">
           <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
 
           <div class="prompt-row">
-            <div>
+            <div class="prompt-copy">
               <span class="eyebrow" data-i18n="yourTask">Mari cuba!</span>
-              <h2 id="promptText">Bina nombor daripada nilai yang diberi.</h2>
+              <h2 id="promptText">Bina nombor ini.</h2>
             </div>
-            <span class="level-badge" id="levelBadge">D2</span>
+
+            <div class="prompt-tools">
+              <div id="controlsHost">
+                <label class="field" for="levelSelect">
+                  <span data-i18n="level">Tahap</span>
+                  <select id="levelSelect">
+                    <option value="d1" data-i18n="levelD1">D1 (0–100)</option>
+                    <option value="d2" data-i18n="levelD2">D2 (0–1,000)</option>
+                    <option value="d3" data-i18n="levelD3">D3 (0–10,000)</option>
+                    <option value="d4" data-i18n="levelD4">D4 (0–100,000)</option>
+                    <option value="d5" data-i18n="levelD5">D5 (0–1,000,000)</option>
+                    <option value="d6" data-i18n="levelD6">D6 (0–10,000,000)</option>
+                  </select>
+                </label>
+
+                <label class="field" id="readDirectionField" for="readDirectionSelect" hidden>
+                  <span data-i18n="practiceType">Jenis latihan</span>
+                  <select id="readDirectionSelect">
+                    <option value="random" data-i18n="randomOption">Rawak</option>
+                    <option value="numberToWords" data-i18n="numberToWordsOption">Nombor → perkataan</option>
+                    <option value="wordsToNumber" data-i18n="wordsToNumberOption">Perkataan → nombor</option>
+                  </select>
+                </label>
+
+                <label class="field" id="extremeObjectiveField" for="extremeObjectiveSelect" hidden>
+                  <span data-i18n="questionType">Jenis soalan</span>
+                  <select id="extremeObjectiveSelect">
+                    <option value="random" data-i18n="randomOption">Rawak</option>
+                    <option value="largest" data-i18n="largestOption">Nombor terbesar</option>
+                    <option value="smallest" data-i18n="smallestOption">Nombor terkecil</option>
+                  </select>
+                </label>
+              </div>
+              <span class="level-badge" id="levelBadge">D2</span>
+            </div>
           </div>
 
           <div class="challenge-display" id="challengeDisplay" aria-live="polite"></div>
@@ -126,35 +123,63 @@
           <section class="card-bank-section" aria-labelledby="cardBankTitle">
             <div class="bank-heading">
               <h3 id="cardBankTitle">Kad nombor</h3>
-              <span id="bankHint">Tekan atau seret kad</span>
+              <span id="bankHint">Tekan atau seret</span>
             </div>
             <div class="card-bank" id="cardBank"></div>
           </section>
 
-          <div class="answer-actions">
-            <button class="secondary-btn" id="resetBtn" type="button">
-              <span aria-hidden="true">↺</span><span data-i18n="reset">Mula semula</span>
-            </button>
-            <button class="primary-btn" id="checkBtn" type="button">
-              <span aria-hidden="true">✓</span><span data-i18n="check">Semak</span>
-            </button>
+          <div class="action-dock">
+            <div class="feedback" id="feedback" aria-live="polite"></div>
+            <div class="answer-actions">
+              <button class="secondary-btn new-question-btn" id="newQuestionBtn" type="button">
+                <span aria-hidden="true">✦</span><span data-i18n="newQuestion">Soalan baharu</span>
+              </button>
+              <button class="secondary-btn" id="resetBtn" type="button">
+                <span aria-hidden="true">↺</span><span data-i18n="reset">Semula</span>
+              </button>
+              <button class="primary-btn" id="checkBtn" type="button">
+                <span aria-hidden="true">✓</span><span data-i18n="check">Semak</span>
+              </button>
+            </div>
           </div>
-
-          <div class="feedback" id="feedback" aria-live="polite"></div>
         </section>
-      </section>
-
-      <section class="learning-strip" aria-label="Learning steps">
-        <div><span>1</span><strong id="stepLookText" data-i18n="stepLook">Lihat nilai tempat</strong></div>
-        <div><span>2</span><strong id="stepMoveText" data-i18n="stepMove">Susun kad nombor</strong></div>
-        <div><span>3</span><strong id="stepCheckText" data-i18n="stepCheck">Semak dan faham</strong></div>
       </section>
     </main>
   </div>
 
-  <div class="forest-footer" aria-hidden="true" hidden>
-    <img src="assets/forest-footer.png" alt="">
-  </div>
+  <dialog
+    class="success-dialog"
+    id="successDialog"
+    aria-labelledby="successDialogTitle"
+    aria-describedby="successDialogCheer"
+  >
+    <div class="success-dialog-card">
+      <div class="success-celebration-layer" id="successCelebrationLayer" aria-hidden="true"></div>
+      <div class="success-spark-field" aria-hidden="true">
+        <span class="success-spark success-spark-1">✦</span>
+        <span class="success-spark success-spark-2">★</span>
+        <span class="success-spark success-spark-3">✦</span>
+        <span class="success-spark success-spark-4">★</span>
+        <span class="success-spark success-spark-5">✦</span>
+        <span class="success-spark success-spark-6">★</span>
+      </div>
+
+      <div class="success-medal-wrap" aria-hidden="true">
+        <span class="success-halo success-halo-1"></span>
+        <span class="success-halo success-halo-2"></span>
+        <span class="success-medal">✓</span>
+      </div>
+
+      <p class="success-dialog-cheer" id="successDialogCheer">Hebat! Kamu berjaya menyelesaikannya.</p>
+      <h2 class="success-dialog-title" id="successDialogTitle">Betul!</h2>
+      <div class="success-dialog-answer" id="successDialogAnswer"></div>
+
+      <div class="success-dialog-actions">
+        <button class="secondary-btn" id="successReviewBtn" type="button">Lihat jawapan</button>
+        <button class="primary-btn" id="successNextBtn" type="button" autofocus>Soalan seterusnya</button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="grade-config.js"></script>
   <script type="module" src="auth-bootstrap.js"></script>
